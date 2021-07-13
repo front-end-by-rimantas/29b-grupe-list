@@ -7,8 +7,23 @@ const wordsData = [
         en: 'cat',
         lt: 'katė'
     },
+    255,
+    'ewfd',
+    [],
+    null,
+    {},
+    {
+        en: 'tommato'
+    },
+    {
+        lt: 'aitvaras'
+    },
     {
         en: 'kite',
+        lt: 'aitvaras'
+    },
+    {
+        en: 4856,
         lt: 'aitvaras'
     },
     {

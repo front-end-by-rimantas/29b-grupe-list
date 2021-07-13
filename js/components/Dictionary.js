@@ -49,13 +49,38 @@ class Dictionary {
     }
 
     render() {
-        console.log('piesiam turini....');
-        console.log(this.DOM);
-        console.log(this.dictionaryList);
+        let HTML = '';
 
-        const HTML = '<div class="ryts">labas ryts</div><div class="ryts">labas ryts</div>';
+        for (let i = 0; i < this.dictionaryList.length; i++) {
+            const wordPair = this.dictionaryList[i];
+
+            if (!this.isValidWordPair(wordPair)) {
+                continue;
+            }
+
+            HTML += `<div class="item">
+                        <div class="col">${wordPair.en}</div>
+                        <div class="col">${wordPair.lt}</div>
+                    </div>`;
+        }
 
         this.DOM.innerHTML = HTML;
+    }
+
+    isValidWordPair(pair) {
+        if (typeof pair !== 'object' ||
+            Array.isArray(pair) ||
+            pair === null ||
+            !pair.en ||
+            !pair.lt ||
+            typeof pair.en !== 'string' ||
+            pair.en === '' ||
+            typeof pair.lt !== 'string' ||
+            pair.lt === '') {
+            console.warn(`WARNING: verciamu zodziu pora (gauta reiksme: ${pair}) turi buti objektas su "en" ir "lt" parametrais, kuriu abu turi buti ne tusti tekstai.`);
+            return false;
+        }
+        return true;
     }
 }
 
