@@ -50,6 +50,12 @@ class Dictionary {
 
     render() {
         console.log('piesiam turini....');
+        console.log(this.DOM);
+        console.log(this.dictionaryList);
+
+        const HTML = '<div class="ryts">labas ryts</div><div class="ryts">labas ryts</div>';
+
+        this.DOM.innerHTML = HTML;
     }
 }
 
